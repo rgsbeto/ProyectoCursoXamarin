@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstadisticasFutbol.lst_Competicion_Estadisticas_Partidos">
+    <ContentPage.Content>
+        <StackLayout Margin="5">
+            <ListView
+                x:Name="lvCompeticionEstadisticasPartidos"
+                IsPullToRefreshEnabled="True"
+                IsRefreshing="{Binding IsBusy}"
+                ItemsSource="{Binding Partidos}"
+                RefreshCommand="{Binding RefreshCommand}"
+                Margin="5"
+                HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Margin="5">
+                                <Grid 
+                                ColumnSpacing="2" 
+                                RowSpacing="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Grid.Row="0" Text="{Binding Score.FullTime.HomeTeam}" HorizontalTextAlignment="End"/>
+                                    <Label Grid.Column="1" Grid.Row="0" Text=" - " HorizontalTextAlignment="Center"/>
+                                    <Label Grid.Column="2" Grid.Row="0" Text="{Binding Score.FullTime.AwayTeam}" HorizontalTextAlignment="Start"/>
+                                </Grid>
+                                <Grid 
+                                ColumnSpacing="2" 
+                                RowSpacing="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Grid.Row="0" Text="{Binding HomeTeam.Name}" HorizontalTextAlignment="End"/>
+                                    <Label Grid.Column="1" Grid.Row="0" Text=" - " HorizontalTextAlignment="Center"/>
+                                    <Label Grid.Column="2" Grid.Row="0" Text="{Binding AwayTeam.Name}" HorizontalTextAlignment="Start"/>
+                                </Grid>
+                                <Label Text="{Binding Status}" HorizontalOptions="CenterAndExpand"/>
+                            </StackLayout>
+
+                            <!--<StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Score.FullTime.HomeTeam}" HorizontalOptions="EndAndExpand"/>
+                                    <Label Text=" - " HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Score.FullTime.AwayTeam}" HorizontalOptions="StartAndExpand"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding HomeTeam.Name}" HorizontalOptions="EndAndExpand"/>
+                                    <Label Text=" - " HorizontalOptions="Center"/>
+                                    <Label Text="{Binding AwayTeam.Name}" HorizontalOptions="StartAndExpand"/>
+                                </StackLayout>
+                                <Label Text="{Binding status}" HorizontalOptions="CenterAndExpand"/>
+                            </StackLayout>-->
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

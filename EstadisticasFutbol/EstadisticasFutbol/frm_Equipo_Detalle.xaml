@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstadisticasFutbol.frm_Equipo_Detalle"
+             Title="Detalles">
+    <ContentPage.Content>
+        <StackLayout Margin="5" Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Nombre: " HorizontalOptions="Start"/>
+                <Label Text="{Binding Name}" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="País: " HorizontalOptions="Start"/>
+                <Label Text="{Binding Area.Name}" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Fundación: " HorizontalOptions="Start"/>
+                <Label Text="{Binding Founded}" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Domicilio: " HorizontalOptions="Start"/>
+                <Label Text="{Binding Address}" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Sitio web: " HorizontalOptions="Start"/>
+                <Label Text="{Binding Website}" HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
