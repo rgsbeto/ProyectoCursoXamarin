@@ -16,5 +16,6 @@ namespace EstadisticasFutbol.Utilerias
         public const string AUTH_TOKEN = "ac105f57b00045269042a16f8b9ec03f";
         public const string COMPETICIONES_AUTORIZADAS = "2002;2003;2013;2014;2015;2016;2017;2019;2021";
         public const string MIME_TYPE_JSON = "application/json";
+        public const int MINUTOS_VIGENCIA_CACHE = 5;
     }
 }
